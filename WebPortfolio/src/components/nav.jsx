@@ -19,6 +19,16 @@ const nav = () => {
                 </div>
             </div>
         </div>
+
+        <div>
+            <div className='flex justify-between ml-10'>
+                <ul>
+                    <li>Skills</li>
+                    <li>Projects</li>
+                    <li>Testimonials</li>
+                </ul>
+            </div>
+        </div>
     </>
   )
 }
