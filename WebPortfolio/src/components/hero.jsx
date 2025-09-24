@@ -1,4 +1,4 @@
-import {BsFacebook, BsTwitter, BsInstagram, BsPinterest } from 'react-icons/bs';
+import {BsFacebook, BsTwitter, BsLinkedin, BsGithub } from 'react-icons/bs';
 import HeroPic from '../assets/Chopper540.jpg';
 
 const hero = () => {
@@ -8,7 +8,7 @@ const hero = () => {
             <p className='text-4xl mb-5 text-slate-300'>I'm</p>
             <h1 className='text-6xl'>Stephanie Guimarães</h1>
             <hr/>
-            <p className='mt-10 text-xl text-slate-300 font-sans'>
+            <p className='mt-10 text-slate-300 font-sans'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -18,14 +18,18 @@ const hero = () => {
             <img src={HeroPic} alt="" width={250} height={250}
             className='rounded-full w-full border-8 border-white'/>
         </div>
-        <div>
-            <p>About me</p>
-            <p>
+        <div className='w-1/3 ssm:w-fit'>
+            <p className='text-4xl mb-4'>About me</p>
+            <p className='text-slate-300'>
                 Let´s build quality in programming ad design with our services
             </p>
-            <button>
+            <button className='bg-white text-indigo-600 px-10 py-2 my-3 rounded-full hover:bg-indigo-800 hover:text-white'>
                 Show More...
             </button>
+            <div className='flex mt-5 space-x-4 cursor-pointer'>
+                <BsLinkedin size={40}/>
+                <BsGithub size={40}/>
+            </div>
         </div>
     </section>
   )
