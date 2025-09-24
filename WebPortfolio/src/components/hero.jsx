@@ -1,4 +1,4 @@
-import {BsFacebook, BsTwitter, BsInstagram, BsPinterest } from 'react-icons/bs';
+import {BsFacebook, BsTwitter, BsLinkedin, BsGithub } from 'react-icons/bs';
 import HeroPic from '../assets/Chopper540.jpg';
 
 const hero = () => {
@@ -26,6 +26,10 @@ const hero = () => {
             <button className='bg-white text-indigo-600 px-10 py-2 my-3 rounded-full hover:bg-indigo-800 hover:text-white'>
                 Show More...
             </button>
+            <div className='flex mt-5 space-x-4 cursor-pointer'>
+                <BsLinkedin size={40}/>
+                <BsGithub size={40}/>
+            </div>
         </div>
     </section>
   )
