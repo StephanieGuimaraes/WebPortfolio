@@ -11,7 +11,7 @@ const hero = () => {
             <p className='mt-10 text-slate-300 font-sans'>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Ut enim ad minim veniam, quis nostrud.
             </p>
         </div>
         <div className='w-1/3 items-center ssm:w-fit'>
@@ -27,8 +27,8 @@ const hero = () => {
                 Show More...
             </button>
             <div className='flex mt-5 space-x-4 cursor-pointer'>
-                <BsLinkedin size={40}/>
-                <BsGithub size={40}/>
+                <BsLinkedin size={30}/>
+                <BsGithub size={30}/>
             </div>
         </div>
     </section>
