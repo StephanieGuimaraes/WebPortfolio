@@ -21,7 +21,7 @@ const hero = () => {
         <div className='w-1/3 ssm:w-fit'>
             <p className='text-4xl mb-4'>About me</p>
             <p className='text-slate-300'>
-                Let´s build quality in programming ad design with our services
+                Let´s build quality in programming ad design with our services Ut enim ad minim.
             </p>
             <button className='bg-white text-indigo-600 px-10 py-2 my-3 rounded-full hover:bg-indigo-800 hover:text-white'>
                 Show More...
