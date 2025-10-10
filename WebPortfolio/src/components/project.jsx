@@ -1,8 +1,38 @@
 import React from 'react'
+import HeroPic from '../assets/Chopper540.jpg';
 
 const project = () => {
   return (
-    <div>project</div>
+    <>
+      <div className='bg-indigo-800 m-20 max-w-full'>
+          <div className='grid justify-items-center m-10'>
+            <h1 className='text-3xl text-white mt-10'>Project Title</h1>
+          </div>
+          <div>
+              <div className='grid grid-cols-2 gap-4 p-5'>
+                  <div className='max-w-md max-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl hover:animate-pulse'>
+                      <div className='md:flex'>
+                          <div className='p-8'>
+                              <div className='uppercase tracking-wide text-sm text-indigo-500 font-semibold'>
+                                  Hospital Management System
+                              </div>
+                              <a href='#'>Subheading</a>
+                              <p className='mt-2 text-slate-500'>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Natus delectus consequatur.</p>
+                          </div>
+                          <div className='md:shrink-0 p-5'>
+                            <img src={HeroPic} alt='Hero' width={150} height={150}/>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <hr/>
+              <div>
+
+              </div>
+          </div>
+      </div>
+    </>
   )
 }
 
