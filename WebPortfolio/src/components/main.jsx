@@ -1,17 +1,9 @@
-import Nav from './nav'
-import Hero from './hero'
-import Project from './project'
-import Testimonial from './testimonial'
-import Footer from './footer'
+import Header from '../pages/LandingPage/Header'
 
 const main = () => {
   return (
-    <div className='bg-indigo-600'>
-        <Nav />
-        <Hero />
-        <Project/>
-        <Testimonial/>
-        <Footer/>
+    <div className='dark:bg-slate-950'>
+        <Header />
     </div>
   )
 }
