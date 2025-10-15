@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import {CgNametag, CgPhone} from 'react-icons/cg';
 
 const navList = [
@@ -29,6 +30,11 @@ const Header = () => {
             <CgPhone className="w-4 h-4 text-white"/>
             <a href="#" className="text-lg text-white font-medium">Contact</a>
           </div>
+        </div>
+        <div>
+          <button>
+            {/* {isMenuOpen ? <AiOutlineClose} */}
+          </button>
         </div>
       </div>
     </header>
