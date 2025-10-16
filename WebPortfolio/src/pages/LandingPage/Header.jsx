@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import {CgNametag, CgPhone} from 'react-icons/cg';
+import {CgMenu, CgNametag, CgPhone} from 'react-icons/cg';
 
 const navList = [
   {href: '#skills', label: 'Skills'},
@@ -13,7 +13,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header className="scroll-mt-20 bg-white shadow-md sticky top-0 z-50">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
+      <div className="w-full mx-auto flex items-center justify-between py-4 px-6 lg:px-64">
         <div className="flex items-center space-x-2 hover:text-indigo-800 cursor-pointer">
             <CgNametag className="w-8 h-8 text-indigo-600"/> 
             <a href="#" className="text-2xl font-bold text-indigo-600">Stephanie</a>
@@ -31,12 +31,28 @@ const Header = () => {
             <a href="#" className="text-lg text-white font-medium">Contact</a>
           </div>
         </div>
-        <div>
-          <button>
-            {/* {isMenuOpen ? <AiOutlineClose} */}
+        <div className="md:hidden flex items-center justify-center p-2">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <AiOutlineClose className="w-6 h-6 text-indigo-600" /> : <CgMenu className="w-6 h-6 text-indigo-600" />}
           </button>
         </div>
       </div>
+      {
+        isMenuOpen && (
+          <div className="md:hidden bg-white border-t border-slate-200 shadow-md px-6 py-4 space-y-3 text-indigo-600 font-medium">
+             {navList.map((link) => (
+              <a
+                href={link.href}
+                key={link.href}
+                className="block hover:text-indigo-800 transition"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+             ))}
+          </div>
+        )
+      }
     </header>
     
   )
