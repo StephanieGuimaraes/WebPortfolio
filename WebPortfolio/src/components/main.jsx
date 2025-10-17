@@ -1,9 +1,11 @@
 import Header from '../pages/LandingPage/Header'
+import Hero from '../pages/LandingPage/Hero'
 
 const main = () => {
   return (
-    <div className='dark:bg-slate-950'>
+    <div>
         <Header />
+        <Hero />
     </div>
   )
 }
