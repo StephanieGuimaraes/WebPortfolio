@@ -1,7 +1,7 @@
 import React from 'react'
 import { CgCodeSlash } from 'react-icons/cg';
 import {FaFileDownload} from 'react-icons/fa';
-import ProfilePic from '../../assets/MyProfile.png';
+import ProfilePic from '../../assets/MyProfile2.png';
 import HeroBackground from '../../assets/BackGroundImage.png';
 import {BsLinkedin, BsGithub } from 'react-icons/bs';
 
@@ -38,7 +38,7 @@ const Hero = () => {
                     <BsGithub size={25} className='text-indigo-600 hover:text-indigo-800'/>
                 </div>
             </div>
-            <div>
+            <div className="flex items-center justify-center">
                 <img src={ProfilePic} alt='Profile' className='w-80 lg:w-[350px] rounded-4xl pr-4 sm:pr-6 lg:pr-12'></img>
             </div>
         </div>
