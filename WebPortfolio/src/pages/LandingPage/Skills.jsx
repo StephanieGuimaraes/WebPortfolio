@@ -6,6 +6,8 @@ import { CgCodeSlash } from 'react-icons/cg';
 import { SiCypress, SiAltiumdesigner } from 'react-icons/si';
 import { LuRotate3D } from 'react-icons/lu';
 import { PiCircuitryLight } from 'react-icons/pi';
+import LogoUnb from '../../assets/LogoUnb.png';
+import LogoIfg from '../../assets/LogoIfg.png';
 
 const softwareSkills = [
     {
@@ -168,14 +170,6 @@ const engineeringSkills = [
     },
     {
         icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
-        name: 'VsCode',
-        level: 'Advanced',
-    }
-]
-
-const otherSkills = [
-    {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
         name: 'English',
         level: 'Advanced',
     },
@@ -189,6 +183,22 @@ const otherSkills = [
         name: 'Spanish',
         level: 'Beginner',
     },
+]
+
+
+const education = [
+    {
+        logo: <img src={LogoUnb} alt="University Logo" className="w-20 h-20 rounded-lg object-contain"/>,
+        institution: 'University of Brasília (UnB)',
+        degree: 'Bachelor degree in Mecatronics Engineering',
+        period: '2015 - 2022',
+    },
+    {
+        logo: <img src={LogoIfg} alt="University Logo" className="w-20 h-20 rounded-lg object-contain"/>,
+        institution: 'Instituto Federal de Goiás (IFG)',
+        degree: 'Technical degree in Eletronics',
+        period: '2011 - 2015',
+    }
 ]
 
 const Skills = () => {
@@ -301,7 +311,7 @@ const Skills = () => {
                 </div>
                 <div className='mb-6'>
                     <h3 className='text-2xl font-semibold text-indigo-600 mb-6 underline decoration-2 underline-offset-4 title-animated animate-slide-in-left animation-delay-400'>
-                        Engineering
+                        Other Skills
                     </h3>
                     <div>
                         {engineeringSkills.map((skill, index) => (
@@ -318,27 +328,30 @@ const Skills = () => {
                         ))}
                     </div>
                 </div>
-                <div className='mb-6'>
-                    <h3 className='text-2xl font-semibold text-indigo-600 mb-6 underline decoration-2 underline-offset-4 title-animated animate-slide-in-left animation-delay-600'>
-                        Other Skills
-                    </h3>
-                    <div>
-                        {otherSkills.map((skill, index) => (
-                        <div 
-                            key={index}
-                            className={`inline-flex items-start bg-white text-slate-800 px-4 py-2 m-2 rounded-2xl shadow hover:shadow-md transition text-base font-medium gap-2 card-animated animate-fade-in-up other-card-delay-${index + 1}`}
+                <div>
+                    <h3 className='text-2xl font-semibold text-indigo-600 mb-6 underline decoration-2 underline-offset-4 title-animated animate-slide-in-left animation-delay-800'
                         >
-                            {skill.icon}
-                            <div className='flex flex-col'>
-                                <span className='text-sm font-semibold'>{skill.name}</span>
-                                <span className='text-xs text-slate-500'>{skill.level}</span>
-                            </div>
-                        </div>
+                            Education
+                    </h3>
+                    <div className="flex items-center justify-start gap-6">
+                        {education.map((edu, index) => (
+                            <React.Fragment key={index}>
+                                <div 
+                                    className={`flex items-center text-slate-800 px-6 py-4 transition text-base font-medium gap-4 card-animated animate-fade-in-up other-card-delay-${index + 1} flex-1 max-w-xs`}
+                                >
+                                    {edu.logo}
+                                    <div className='flex flex-col'>
+                                        <span className='text-sm font-semibold'>{edu.institution}</span>
+                                        <span className='text-xs text-slate-500'>{edu.degree}</span>
+                                        <span className='text-xs text-slate-500'>{edu.period}</span>
+                                    </div>
+                                </div>
+                                {index < education.length - 1 && (
+                                    <div className="w-px h-20 bg-slate-300"></div>
+                                )}
+                            </React.Fragment>
                         ))}
                     </div>
-                </div>
-                <div>
-                    <h3 className='text-2xl font-semibold text-indigo-600 mb-6 underline decoration-2 underline-offset-4 title-animated animate-slide-in-left animation-delay-800'>Education</h3>
                 </div>
             </div>
         </section>
