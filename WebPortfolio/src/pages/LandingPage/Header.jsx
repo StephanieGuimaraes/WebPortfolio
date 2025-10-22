@@ -5,7 +5,6 @@ import {CgMenu, CgNametag, CgPhone} from 'react-icons/cg';
 const navList = [
   {href: '#skills', label: 'Skills'},
   {href: '#projects', label: 'Projects'},
-  {href: '#testimonials', label: 'Testimonials'},
   {href: '#articles', label: 'Articles'},
 ];
 

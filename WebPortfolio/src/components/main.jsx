@@ -1,5 +1,6 @@
 import Header from '../pages/LandingPage/Header'
 import Hero from '../pages/LandingPage/Hero'
+import Projects from '../pages/LandingPage/Projects'
 import Skills from '../pages/LandingPage/Skills'
 
 const main = () => {
@@ -8,6 +9,7 @@ const main = () => {
         <Header />
         <Hero />
         <Skills />
+        <Projects />
     </div>
   )
 }
