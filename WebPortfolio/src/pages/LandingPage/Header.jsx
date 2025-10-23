@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import {CgMenu, CgNametag, CgPhone} from 'react-icons/cg';
+import Logo1 from '../../assets/Logo1_rbg.png';
 
 const navList = [
   {href: '#skills', label: 'Skills'},
@@ -14,8 +15,15 @@ const Header = () => {
     <header className="scroll-mt-20 bg-white shadow-md sticky top-0 z-50">
       <div className="w-full mx-auto flex items-center justify-between py-4 px-6 lg:px-64">
         <div className="flex items-center space-x-2 hover:text-indigo-800 cursor-pointer">
-            <CgNametag className="w-8 h-8 text-indigo-600"/> 
-            <a href="#" className="text-2xl font-bold text-indigo-600">Stephanie</a>
+            {/* <CgNametag className="w-8 h-8 text-indigo-600"/> */}
+            <a href="#home" className="block">
+                <img 
+                    src={Logo1} 
+                    alt='Logo' 
+                    className='w-80 lg:w-[200px] rounded-4xl pr-4 sm:pr-6 lg:pr-12'
+                />
+            </a>
+            {/* <a href="#" className="text-2xl font-bold text-indigo-600"></a> */}
         </div>
         <div className="flex items-center space-x-6">
           <nav className="hidden md:flex items-center space-x-6 text-indigo-600 font-medium">
