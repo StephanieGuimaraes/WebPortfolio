@@ -68,7 +68,7 @@ const Projects = () => {
                     key={index}
                     onClick={() => setActiveCard(index)}
                     className={`p-4 rounded-xl transition-all duration-300 flex flex-col
-                      items-center ${activeCard === index 
+                      items-start ${activeCard === index 
                         ? 'bg-white shadow-lg border-b-4 border-indigo-600' 
                         : 'bg-slate-100 hover:bg-indigo-200'}`
                     }
@@ -76,7 +76,7 @@ const Projects = () => {
                     <div className='mb-2'>{card.image}</div>
                     <h3 className='text-xl font-semibold text-indigo-600 mb-1'>{card.title}</h3>
                     <h4 className='text-md text-indigo-500 mb-2'>{card.subTitle}</h4>
-                    <p className='text-slate-600 text-center'>{card.content}</p>
+                    {/* <p className='text-slate-600 text-center'>{card.content}</p> */}
                   </button>
               ))
               }
