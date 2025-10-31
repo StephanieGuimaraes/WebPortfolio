@@ -37,7 +37,7 @@ const Projects = () => {
     },
     {
       title: "CLARA Beep Solutions",
-      subTitle: "Technology and innovation in laparoscopic surgery",
+      subTitle: "Technology in laparoscopic surgery",
       content: "CLARA is a tool to assist in performing laparoscopy procedures. The system provides greater precision and camera stability for doctors during the surgical procedure through an optical positioning control system that is easily adjustable via joystick or foot pedal.",
       image: <img src={ProfilePic} alt='Profile' className='w-80 lg:w-[350px] rounded-4xl pr-4 sm:pr-6 lg:pr-12'></img>
     },
