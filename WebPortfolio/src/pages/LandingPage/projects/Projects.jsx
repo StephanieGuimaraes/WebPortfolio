@@ -62,7 +62,7 @@ const Projects = () => {
                 <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Projects</h2>
                 <p className='text-slate-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
-            <div>
+            <div className='grid grid-cols-1 md:grid-cols-5 gap-4 mb-8'>
               {Cards.map((card, index)=>(
                   <button
                     key={index}
@@ -78,8 +78,34 @@ const Projects = () => {
                     <h4 className='text-md text-indigo-500 mb-2'>{card.subTitle}</h4>
                     {/* <p className='text-slate-600 text-center'>{card.content}</p> */}
                   </button>
-              ))
-              }
+              ))}
+            </div>
+            <div className='bg-gradient-to-r from-slate-50 to-indigo-50 rounded-2xl p-8 shadow-sm'>
+                <div className='flex flex-col md:flex-row items-center gap-6'>
+                    <div className='flex-shrink-0 bg-white p-6 rounded-xl shadow-md'>
+                      {Cards[activeCard].image}
+                    </div>
+                    <div>
+                      <h3 className='text-2xl font-semibold text-indigo-600 mb-4'>{Cards[activeCard].title}</h3>
+                      <p className='text-slate-700'>{Cards[activeCard].content}</p>
+                    </div>
+                </div>
+            </div>
+            <div className='mt-8 flex justify-center'>
+              <div className='flex space-x-2'>
+                {Cards.map((_, index) => (
+                  <button
+                  key={index}
+                  onClick={() => setActiveCard(index)}
+                  className={`w-4 h-4 rounded-full transition-all ${activeCard === index 
+                    ? 'bg-indigo-600'
+                    : 'bg-slate-300 hover:bg-indigo-400'
+                  }`} aria-label={`Go to project ${index + 1}`}
+                  >
+
+                  </button>
+                ))}
+              </div>
             </div>
         </div>
     </section>
