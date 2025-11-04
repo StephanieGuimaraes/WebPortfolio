@@ -7,7 +7,7 @@ const Projects = () => {
   const Cards = [
     {
       title: "Pilot",
-      subTitle: "Subtitle 1",
+      subTitle: "End-to-end AdTech solution",
       content: "This is the content for project 1.",
       image: <img src={ProfilePic} alt='Profile' className='w-80 lg:w-[350px] rounded-4xl pr-4 sm:pr-6 lg:pr-12'></img>
     },
