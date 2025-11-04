@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import {CgMenu, CgNametag, CgPhone} from 'react-icons/cg';
-import Logo1 from '../../assets/Logo1_rbg.png';
+import Logo1 from '../../assets/logos/Logo1_rbg.png';
 
 const navList = [
   {href: '#skills', label: 'Skills'},

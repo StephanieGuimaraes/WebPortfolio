@@ -6,8 +6,8 @@ import { CgCodeSlash } from 'react-icons/cg';
 import { SiCypress, SiAltiumdesigner } from 'react-icons/si';
 import { LuRotate3D } from 'react-icons/lu';
 import { PiCircuitryLight } from 'react-icons/pi';
-import LogoUnb from '../../assets/LogoUnb.png';
-import LogoIfg from '../../assets/LogoIfg.png';
+import LogoUnb from '../../assets/logos/LogoUnb.png';
+import LogoIfg from '../../assets/logos/LogoIfg.png';
 
 const softwareSkills = [
     {
