@@ -284,7 +284,7 @@ const Skills = () => {
         .other-card-delay-2 { animation-delay: 2.3s; }
         .other-card-delay-3 { animation-delay: 2.4s; }`}
         </style>
-        <section id='skills' className='scroll-my-20 py-24 bg-slate-50 lg:px-64'>
+        <section id='skills' className='scroll-my-20 pt-24 pb-8 bg-slate-50 lg:px-64'>
             <div className='w-full mx-auto'>
                 <div className='text-center mb-16'>
                     <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Skills & Education</h2>
