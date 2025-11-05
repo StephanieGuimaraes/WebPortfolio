@@ -5,6 +5,34 @@ import SoftwareRVPic from '../../../assets/ProjectsCardsPic/SoftwareRV.png';
 
 const Projects = () => {
   const [activeCard, setActiveCard] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // Número de cards visíveis por vez (responsivo)
+  const getCardsPerView = () => {
+    if (typeof window !== 'undefined') {
+      if (window.innerWidth >= 1024) return 3; // lg screens
+      if (window.innerWidth >= 768) return 2;  // md screens
+      return 1; // sm screens
+    }
+    return 3;
+  };
+
+  const cardsPerView = getCardsPerView();
+
+  // Funções de navegação do carrossel
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const maxIndex = Math.max(0, Cards.length - cardsPerView);
+      return prevIndex >= maxIndex ? 0 : Math.min(prevIndex + 1, maxIndex);
+    });
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const maxIndex = Math.max(0, Cards.length - cardsPerView);
+      return prevIndex === 0 ? maxIndex : Math.max(0, prevIndex - 1);
+    });
+  };
 
   const Cards = [
     {
@@ -64,30 +92,62 @@ const Projects = () => {
                 <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Projects</h2>
                 <p className='text-slate-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mb-8'>
-              {Cards.map((card, index)=>(
-                  <button
-                    key={index}
-                    onClick={() => setActiveCard(index)}
-                    className={`rounded-md transition-all duration-300 flex flex-col overflow-hidden
-                      ${activeCard === index 
-                        ? 'bg-white shadow-lg border-b-4 border-indigo-600' 
-                        : 'bg-slate-100 hover:bg-indigo-200'}`
-                    }
-                  >
-                    <div className='w-full h-48 overflow-hidden'>
-                      <img 
-                        src={card.image} 
-                        alt={card.title} 
-                        className='w-full h-full object-cover'
-                      />
+            {/* Carrossel Container */}
+            <div className='relative mb-8'>
+              {/* Seta Esquerda */}
+              <button
+                onClick={prevSlide}
+                className='absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110'
+                disabled={currentIndex === 0}
+              >
+                <svg className='w-6 h-6 text-indigo-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 19l-7-7 7-7' />
+                </svg>
+              </button>
+
+              {/* Cards do Carrossel */}
+              <div className='overflow-hidden mx-8 sm:mx-12'>
+                <div 
+                  className='flex transition-transform duration-500 ease-in-out'
+                  style={{ transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)` }}
+                >
+                  {Cards.map((card, index) => (
+                    <div key={index} className='w-full lg:w-1/3 md:w-1/2 flex-shrink-0 px-2 sm:px-3'>
+                      <button
+                        onClick={() => setActiveCard(index)}
+                        className={`w-full rounded-md transition-all duration-300 flex flex-col overflow-hidden
+                          ${activeCard === index 
+                            ? 'bg-white shadow-lg border-b-4 border-indigo-600' 
+                            : 'bg-slate-100 hover:bg-indigo-200'}`
+                        }
+                      >
+                        <div className='w-full h-48 overflow-hidden'>
+                          <img 
+                            src={card.image} 
+                            alt={card.title} 
+                            className='w-full h-full object-cover'
+                          />
+                        </div>
+                        <div className='p-4 w-full'>
+                          <h3 className='text-base font-semibold text-indigo-600 mb-2 text-left'>{card.title}</h3>
+                          <h4 className='text-sm text-indigo-500 text-left line-clamp-2'>{card.subTitle}</h4>
+                        </div>
+                      </button>
                     </div>
-                    <div className='p-4 w-full'>
-                      <h3 className='text-base font-semibold text-indigo-600 mb-2 text-left'>{card.title}</h3>
-                      <h4 className='text-sm text-indigo-500 text-left line-clamp-2'>{card.subTitle}</h4>
-                    </div>
-                  </button>
-              ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Seta Direita */}
+              <button
+                onClick={nextSlide}
+                className='absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110'
+                disabled={currentIndex + cardsPerView >= Cards.length}
+              >
+                <svg className='w-6 h-6 text-indigo-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+                  <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M9 5l7 7-7 7' />
+                </svg>
+              </button>
             </div>
             <div className='bg-gradient-to-r from-slate-50 to-indigo-50 rounded-2xl p-8 shadow-sm'>
                 <div className='flex flex-col md:flex-row items-center gap-6'>
