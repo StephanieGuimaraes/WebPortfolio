@@ -20,7 +20,7 @@ const Header = () => {
                 <img 
                     src={Logo1} 
                     alt='Logo' 
-                    className='w-80 lg:w-[200px] rounded-4xl pr-4 sm:pr-6 lg:pr-12'
+                    className='w-32 sm:w-40 md:w-48 lg:w-[200px] rounded-4xl pr-4 sm:pr-6 lg:pr-12'
                 />
             </a>
             {/* <a href="#" className="text-2xl font-bold text-indigo-600"></a> */}
