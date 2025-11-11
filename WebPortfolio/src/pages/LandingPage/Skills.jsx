@@ -284,7 +284,7 @@ const Skills = () => {
         .other-card-delay-2 { animation-delay: 2.3s; }
         .other-card-delay-3 { animation-delay: 2.4s; }`}
         </style>
-        <section id='skills' className='scroll-my-20 pt-24 pb-8 bg-slate-50 lg:px-64'>
+        <section id='skills' className='scroll-my-20 pt-24 pb-8 bg-slate-50 px-8 lg:px-64'>
             <div className='w-full mx-auto'>
                 <div className='text-center mb-16'>
                     <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Skills & Education</h2>
@@ -333,11 +333,11 @@ const Skills = () => {
                         >
                             Education
                     </h3>
-                    <div className="flex items-center justify-start gap-6">
+                    <div className="flex flex-col md:flex-row md:items-center justify-start gap-6">
                         {education.map((edu, index) => (
                             <React.Fragment key={index}>
                                 <div 
-                                    className={`flex items-center text-slate-800 px-6 py-4 transition text-base font-medium gap-4 card-animated animate-fade-in-up other-card-delay-${index + 1} flex-1 max-w-xs`}
+                                    className={`flex items-center text-slate-800 px-6 py-4 transition text-base font-medium gap-4 card-animated animate-fade-in-up other-card-delay-${index + 1} flex-1 md:max-w-xs`}
                                 >
                                     {edu.logo}
                                     <div className='flex flex-col'>
@@ -347,7 +347,7 @@ const Skills = () => {
                                     </div>
                                 </div>
                                 {index < education.length - 1 && (
-                                    <div className="w-px h-20 bg-slate-300"></div>
+                                    <div className="hidden md:block w-px h-20 bg-slate-300"></div>
                                 )}
                             </React.Fragment>
                         ))}
