@@ -86,7 +86,17 @@ const Projects = () => {
   ]
   
   return (
-    <section id='projects' className='scroll-my-20 pt-24 pb-8 bg-slate-50 lg:px-64'>
+    <>
+      <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+      <section id='projects' className='scroll-my-20 pt-24 pb-8 bg-slate-50 px-4 md:px-8 lg:px-64'>
         <div className='w-full mx-auto'>
             <div className='text-center mb-16'>
                 <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Projects</h2>
@@ -97,7 +107,7 @@ const Projects = () => {
               {/* Seta Esquerda */}
               <button
                 onClick={prevSlide}
-                className='absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110'
+                className='hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110'
                 disabled={currentIndex === 0}
               >
                 <svg className='w-6 h-6 text-indigo-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -106,13 +116,13 @@ const Projects = () => {
               </button>
 
               {/* Cards do Carrossel */}
-              <div className='overflow-hidden mx-8 sm:mx-12'>
+              <div className='overflow-x-auto md:overflow-hidden mx-0 md:mx-12 scrollbar-hide'>
                 <div 
-                  className='flex transition-transform duration-500 ease-in-out'
+                  className='flex md:transition-transform md:duration-500 md:ease-in-out'
                   style={{ transform: `translateX(-${currentIndex * (100 / cardsPerView)}%)` }}
                 >
                   {Cards.map((card, index) => (
-                    <div key={index} className='w-full lg:w-1/3 md:w-1/2 flex-shrink-0 px-2 sm:px-3'>
+                    <div key={index} className='w-[85%] md:w-1/2 lg:w-1/3 flex-shrink-0 px-2 sm:px-3 md:px-3'>
                       <button
                         onClick={() => setActiveCard(index)}
                         className={`w-full rounded-md transition-all duration-300 flex flex-col overflow-hidden
@@ -141,7 +151,7 @@ const Projects = () => {
               {/* Seta Direita */}
               <button
                 onClick={nextSlide}
-                className='absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110'
+                className='hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white hover:bg-indigo-50 shadow-lg rounded-full p-3 transition-all duration-300 hover:scale-110'
                 disabled={currentIndex + cardsPerView >= Cards.length}
               >
                 <svg className='w-6 h-6 text-indigo-600' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
@@ -181,7 +191,8 @@ const Projects = () => {
               </div>
             </div>
         </div>
-    </section>
+      </section>
+    </>
   )
 }
 
