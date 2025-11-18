@@ -6,7 +6,7 @@ import Logo1 from '../../assets/logos/Logo1_rbg.png';
 const navList = [
   {href: '#skills', label: 'Skills'},
   {href: '#projects', label: 'Projects'},
-  {href: '#articles', label: 'Articles'},
+  //{href: '#articles', label: 'Articles'},
 ];
 
 const Header = () => {
