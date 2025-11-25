@@ -35,7 +35,7 @@ const Header = () => {
           </nav>
           <div className="hidden md:flex items-center space-x-2 bg-indigo-600 px-4 py-2 rounded-full hover:bg-indigo-800 transition text-md cursor-pointer">
             <CgPhone className="w-4 h-4 text-white"/>
-            <a href="#" className="text-lg text-white font-medium">Contact</a>
+            <a href="#contact" className="text-lg text-white font-medium">Contact</a>
           </div>
         </div>
         <div className="md:hidden flex items-center justify-center p-2">
