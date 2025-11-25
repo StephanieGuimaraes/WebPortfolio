@@ -96,7 +96,7 @@ const Projects = () => {
           display: none;
         }
       `}</style>
-      <section id='projects' className='scroll-my-20 pt-24 pb-8 bg-slate-50 px-4 md:px-8 lg:px-64'>
+      <section id='projects' className='scroll-my-20 pt-24 pb-16 bg-slate-50 px-4 md:px-8 lg:px-64'>
         <div className='w-full mx-auto'>
             <div className='text-center mb-16'>
                 <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Projects</h2>
