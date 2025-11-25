@@ -1,3 +1,4 @@
+import Contact from '../pages/LandingPage/Contact'
 import Header from '../pages/LandingPage/Header'
 import Hero from '../pages/LandingPage/Hero'
 import Projects from '../pages/LandingPage/projects/Projects'
@@ -10,6 +11,7 @@ const main = () => {
         <Hero />
         <Skills />
         <Projects />
+        <Contact />
     </div>
   )
 }
