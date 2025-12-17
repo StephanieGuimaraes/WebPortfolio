@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { RiJavascriptFill, RiTailwindCssFill } from 'react-icons/ri';
 import { BiLogoTypescript } from 'react-icons/bi';
-import { FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaFigma, FaGitAlt, FaGithub, FaUnity } from 'react-icons/fa';
+import { FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaFigma, FaGitAlt, FaGithub, FaUnity, FaGraduationCap } from 'react-icons/fa';
 import { CgCodeSlash } from 'react-icons/cg';
 import { SiCypress, SiAltiumdesigner } from 'react-icons/si';
 import { LuRotate3D } from 'react-icons/lu';
@@ -11,352 +11,420 @@ import LogoIfg from '../../assets/logos/LogoIfg.png';
 
 const softwareSkills = [
     {
-        icon: <RiJavascriptFill className='w-5 h-5 text-indigo-600' />,
+        icon: <RiJavascriptFill className='w-4 h-4' />,
         name: 'JavaScript',
         level: 'Advanced',
+        percentage: 90,
+        color: 'text-yellow-500'
     },
     {
-        icon: <BiLogoTypescript className='w-5 h-5 text-indigo-600' />, 
+        icon: <BiLogoTypescript className='w-4 h-4' />, 
         name: 'TypeScript',
         level: 'Advanced',
+        percentage: 85,
+        color: 'text-blue-600'
     },
     {
-        icon: <FaReact className='w-5 h-5 text-indigo-600' />,
+        icon: <FaReact className='w-4 h-4' />,
         name: 'React',
         level: 'Advanced',
+        percentage: 95,
+        color: 'text-cyan-500'
     },
     {
-        icon: <RiTailwindCssFill className='w-5 h-5 text-indigo-600' />,
+        icon: <RiTailwindCssFill className='w-4 h-4' />,
         name: 'Tailwind CSS',
         level: 'Intermediate',
+        percentage: 80,
+        color: 'text-teal-500'
     },
     {
-        icon: <FaCss3Alt className='w-5 h-5 text-indigo-600' />,
+        icon: <FaCss3Alt className='w-4 h-4' />,
         name: 'CSS',
         level: 'Advanced',
+        percentage: 90,
+        color: 'text-blue-500'
     },
     {
-        icon: <FaHtml5 className='w-5 h-5 text-indigo-600' />,
+        icon: <FaHtml5 className='w-4 h-4' />,
         name: 'HTML',
         level: 'Advanced',
+        percentage: 95,
+        color: 'text-orange-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Api Rest',
         level: 'Intermediate',
+        percentage: 75,
+        color: 'text-green-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Api integration',
         level: 'Intermediate',
+        percentage: 70,
+        color: 'text-emerald-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Material UI',
         level: 'Intermediate',
+        percentage: 70,
+        color: 'text-purple-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Ant Design',
         level: 'Beginner',
+        percentage: 50,
+        color: 'text-red-500'
     },
     {
-        icon: <FaNodeJs className='w-5 h-5 text-indigo-600' />,
+        icon: <FaNodeJs className='w-4 h-4' />,
         name: 'Node.js',
         level: 'Beginner',
+        percentage: 45,
+        color: 'text-green-600'
     },
     {
-        icon: <FaFigma className='w-5 h-5 text-indigo-600' />,
+        icon: <FaFigma className='w-4 h-4' />,
         name: 'Figma',
         level: 'Intermediate',
+        percentage: 70,
+        color: 'text-pink-500'
     },
     {
-        icon: <FaGitAlt className='w-5 h-5 text-indigo-600' />,
+        icon: <FaGitAlt className='w-4 h-4' />,
         name: 'Git',
         level: 'Advanced',
+        percentage: 90,
+        color: 'text-orange-600'
     },
     {
-        icon: <FaGithub className='w-5 h-5 text-indigo-600' />,
+        icon: <FaGithub className='w-4 h-4' />,
         name: 'GitHub',
         level: 'Advanced',
+        percentage: 88,
+        color: 'text-gray-700'
     },
     {
-        icon: <FaGithub className='w-5 h-5 text-indigo-600' />, 
+        icon: <FaGithub className='w-4 h-4' />, 
         name: 'GitActions',
         level: 'Beginner',
+        percentage: 40,
+        color: 'text-gray-600'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Aggrid',
         level: 'Beginner',
+        percentage: 45,
+        color: 'text-blue-400'
     },
     {
-        icon: <SiCypress className='w-5 h-5 text-indigo-600' />,
+        icon: <SiCypress className='w-4 h-4' />,
         name: 'Cypress',
         level: 'Beginner',
+        percentage: 40,
+        color: 'text-emerald-600'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'C++',
         level: 'Intermediate',
+        percentage: 60,
+        color: 'text-blue-700'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-6 h-6' />,
         name: 'C#',
         level: 'Beginner',
+        percentage: 35,
+        color: 'text-purple-600'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-6 h-6' />,
         name: 'CI/CD Pipeline',
         level: 'Advanced',
+        percentage: 85,
+        color: 'text-gray-600'
     }
-]
+];
 
 const engineeringSkills = [
     {
-        icon: <FaUnity className='w-5 h-5 text-indigo-600' />,
+        icon: <FaUnity className='w-4 h-4' />,
         name: 'Unity 3D',
         level: 'Intermediate',
+        percentage: 70,
+        color: 'text-gray-800'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'SolidWorks',
         level: 'Intermediate',
+        percentage: 65,
+        color: 'text-red-600'
     },
     {
-        icon: <LuRotate3D className='w-5 h-5 text-indigo-600' />,
+        icon: <LuRotate3D className='w-4 h-4' />,
         name: 'PrusaSlicer',
         level: 'Intermediate',
+        percentage: 75,
+        color: 'text-orange-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: '3D Printing',
         level: 'Intermediate',
+        percentage: 80,
+        color: 'text-blue-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Matlab',
         level: 'Beginner',
+        percentage: 35,
+        color: 'text-amber-500'
     },
     {
-        icon: <PiCircuitryLight className='w-5 h-5 text-indigo-600' />,
+        icon: <PiCircuitryLight className='w-4 h-4' />,
         name: 'STM32',
         level: 'Beginner',
+        percentage: 40,
+        color: 'text-blue-700'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Firmware Development',
         level: 'Beginner',
-    },
-        {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
-        name: 'Scrum',
-        level: 'Advanced',
+        percentage: 45,
+        color: 'text-indigo-500'
     },
     {
-        icon: <SiAltiumdesigner className='w-5 h-5 text-indigo-600' />,
+        icon: <SiAltiumdesigner className='w-4 h-4' />,
         name: 'Altium Designer',
         level: 'Beginner',
+        percentage: 30,
+        color: 'text-yellow-600'
+    }
+];
+
+const otherSkills = [
+    {
+        icon: <CgCodeSlash className='w-4 h-4' />,
+        name: 'Scrum',
+        level: 'Advanced',
+        percentage: 90,
+        color: 'text-blue-600'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Agile Methodologies',
         level: 'Advanced',
+        percentage: 88,
+        color: 'text-green-600'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Atlassian Tools',
         level: 'Intermediate',
-    },
+        percentage: 75,
+        color: 'text-blue-500'
+    }
+];
+
+const languages = [
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'English',
         level: 'Advanced',
+        percentage: 85,
+        color: 'text-blue-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Portuguese',
         level: 'Native',
+        percentage: 100,
+        color: 'text-green-500'
     },
     {
-        icon: <CgCodeSlash className='w-5 h-5 text-indigo-600' />,
+        icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Spanish',
         level: 'Beginner',
-    },
-]
+        percentage: 30,
+        color: 'text-red-500'
+    }
+];
 
 
 const education = [
     {
-        logo: <img src={LogoUnb} alt="University Logo" className="w-20 h-20 rounded-lg object-contain"/>,
+        logo: <img src={LogoUnb} alt="University Logo" className="w-12 h-12 rounded-lg object-contain"/>,
         institution: 'University of Brasília (UnB)',
-        degree: 'Bachelor degree in Mecatronics Engineering',
-        period: '2015 - 2022',
+        degree: 'Bachelor degree in Mechatronics Engineering',
+        period: '2015 - 2022'
     },
     {
-        logo: <img src={LogoIfg} alt="University Logo" className="w-20 h-20 rounded-lg object-contain"/>,
+        logo: <img src={LogoIfg} alt="University Logo" className="w-12 h-12 rounded-lg object-contain"/>,
         institution: 'Instituto Federal de Goiás (IFG)',
-        degree: 'Technical degree in Eletronics',
-        period: '2011 - 2015',
+        degree: 'Technical degree in Electronics',
+        period: '2011 - 2015'
     }
-]
+];
 
 const Skills = () => {
-  return (
-    <>
-        <style jsx>{`
-                @keyframes slideInLeft {
-          0% {
-            transform: translateX(-100px);
-            opacity: 0;
-          }
-          100% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        
-        .animate-slide-in-left {
-          animation: slideInLeft 1.5s ease-out forwards;
-        }
-        
-        .animation-delay-200 {
-          animation-delay: 1s;
-        }
-        
-        .animation-delay-400 {
-          animation-delay: 1.2s;
-        }
-        
-        .animation-delay-600 {
-          animation-delay: 1.6s;
-        }
+    const [activeTab, setActiveTab] = useState('software');
 
-        .animation-delay-800 {
-          animation-delay: 1.8s;
+    const tabs = [
+        { id: 'software', label: 'Software', icon: '💻' },
+        { id: 'engineering', label: 'Engineering', icon: '⚙️' },
+        { id: 'other', label: 'Management', icon: '📋' },
+        { id: 'languages', label: 'Languages', icon: '🌍' }
+    ];
+
+    const getSkillsData = () => {
+        switch (activeTab) {
+            case 'software': return softwareSkills;
+            case 'engineering': return engineeringSkills;
+            case 'other': return otherSkills;
+            case 'languages': return languages;
+            default: return softwareSkills;
         }
-        
-        .title-animated {
-          opacity: 0;
+    };
+
+    const getLevelColor = (level) => {
+        switch (level) {
+            case 'Native': return 'bg-green-500';
+            case 'Advanced': return 'bg-blue-500';
+            case 'Intermediate': return 'bg-yellow-500';
+            case 'Beginner': return 'bg-red-500';
+            default: return 'bg-gray-400';
         }
-        
-        @keyframes fadeInUp {
-          0% {
-            transform: translateY(20px);
-            opacity: 0;
-          }
-          100% {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-        
-        .card-animated {
-          opacity: 0;
-        }
-        
-        /* Delays para Software Skills (após 1s + 0.5s delay) */
-        .software-card-delay-1 { animation-delay: 1.6s; }
-        .software-card-delay-2 { animation-delay: 1.7s; }
-        .software-card-delay-3 { animation-delay: 1.8s; }
-        .software-card-delay-4 { animation-delay: 1.9s; }
-        .software-card-delay-5 { animation-delay: 2.0s; }
-        .software-card-delay-6 { animation-delay: 2.1s; }
-        .software-card-delay-7 { animation-delay: 2.2s; }
-        .software-card-delay-8 { animation-delay: 2.3s; }
-        
-        /* Delays para Engineering Skills (após 1.2s + 0.5s delay) */
-        .engineering-card-delay-1 { animation-delay: 1.8s; }
-        .engineering-card-delay-2 { animation-delay: 1.9s; }
-        .engineering-card-delay-3 { animation-delay: 2.0s; }
-        .engineering-card-delay-4 { animation-delay: 2.1s; }
-        .engineering-card-delay-5 { animation-delay: 2.2s; }
-        .engineering-card-delay-6 { animation-delay: 2.3s; }
-        .engineering-card-delay-7 { animation-delay: 2.4s; }
-        .engineering-card-delay-8 { animation-delay: 2.5s; }
-        
-        /* Delays para Other Skills (após 1.6s + 0.5s delay) */
-        .other-card-delay-1 { animation-delay: 2.2s; }
-        .other-card-delay-2 { animation-delay: 2.3s; }
-        .other-card-delay-3 { animation-delay: 2.4s; }`}
-        </style>
-        <section id='skills' className='scroll-my-20 pt-24 pb-8 bg-slate-50 px-8 lg:px-64'>
+    };
+
+    const SkillCard = ({ skill, index }) => {
+        return (
+            <div className="group bg-white rounded-lg p-3 shadow-lg hover:shadow-xl transform transition-all duration-300 border border-gray-100 hover:scale-105 hover:-translate-y-1">
+                {/* Icon and Title Row */}
+                <div className="flex items-center gap-2 mb-2">
+                    <div className="flex items-center justify-center w-6 h-6 bg-indigo-50 rounded-md group-hover:bg-indigo-100 transition-colors duration-300 flex-shrink-0">
+                        <div className={skill.color}>
+                            <div className="w-4 h-4">{skill.icon}</div>
+                        </div>
+                    </div>
+                    <h4 className="text-xs font-bold text-gray-800 group-hover:text-indigo-600 transition-colors duration-300 leading-tight truncate">
+                        {skill.name}
+                    </h4>
+                </div>
+                
+                {/* Level and Percentage */}
+                <div className="flex items-center justify-between mb-2">
+                    <span className="text-xs text-gray-600">{skill.level}</span>
+                    <span className={`px-1 py-0.5 rounded-full text-xs font-bold text-white ${getLevelColor(skill.level)}`}>
+                        {skill.percentage}%
+                    </span>
+                </div>
+                
+                {/* Progress Bar */}
+                <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                    <div 
+                        className="h-full bg-indigo-500 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${skill.percentage}%` }}
+                    ></div>
+                </div>
+            </div>
+        );
+    };
+
+    return (
+        <section id='skills' className='scroll-my-20 pt-12 md:pt-16 lg:pt-24 pb-8 md:pb-12 lg:pb-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 px-4 sm:px-6 md:px-8 lg:px-64'>
             <div className='w-full mx-auto'>
-                <div className='text-center mb-16'>
-                    <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Skills & Education</h2>
-                    <p className='text-slate-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                {/* Header */}
+                <div className='text-center mb-8 md:mb-12 lg:mb-16'>
+                    <h2 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-indigo-600 mb-3 sm:mb-4 lg:mb-6'>
+                        Skills & Education
+                    </h2>
+                    <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4'>
+                        Passionate about technology and engineering, continuously evolving my skills to create innovative solutions and deliver exceptional results
+                    </p>
                 </div>
-                <div className='mb-6'>
-                    <h3 className='text-2xl font-semibold mb-6 text-indigo-600 underline decoration-2 underline-offset-4 title-animated animate-slide-in-left animation-delay-200'>
-                        Software
-                    </h3>
-                    <div>
-                        {softwareSkills.map((skill, index) => (
-                        <div 
-                            key={index}
-                            className={`inline-flex items-start bg-white text-slate-800 px-4 py-2 m-2 rounded-2xl shadow hover:shadow-md transition text-base font-medium gap-2 card-animated animate-fade-in-up software-card-delay-${Math.min(index + 1, 8)}`}
-                        >
-                            {skill.icon}
-                            <div className='flex flex-col'>
-                                <span className='text-sm font-semibold'>{skill.name}</span>
-                                <span className='text-xs text-slate-500'>{skill.level}</span>
-                            </div>
-                        </div>
+
+                {/* Skills Section */}
+                <div className="mb-10 md:mb-16 lg:mb-20">
+                    {/* Tabs */}
+                    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 md:mb-12">
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`flex items-center px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-3 md:py-4 rounded-full font-bold transition-all duration-300 transform text-xs sm:text-sm md:text-base ${
+                                    activeTab === tab.id
+                                        ? 'bg-indigo-600 text-white shadow-lg sm:shadow-xl md:shadow-2xl scale-105 sm:scale-110'
+                                        : 'bg-white text-gray-700 hover:text-indigo-600 hover:bg-indigo-50 shadow-md sm:shadow-lg hover:shadow-lg sm:hover:shadow-xl hover:scale-105'
+                                }`}
+                            >
+                                {/* //<span className="text-xl">{tab.icon}</span> */}
+                                <span className="truncate">{tab.label}</span>
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Skills Grid */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-2 sm:gap-3 md:gap-4">
+                        {getSkillsData().map((skill, index) => (
+                            <SkillCard 
+                                key={`${activeTab}-${index}`} 
+                                skill={skill} 
+                                index={index}
+                            />
                         ))}
                     </div>
                 </div>
-                <div className='mb-6'>
-                    <h3 className='text-2xl font-semibold text-indigo-600 mb-6 underline decoration-2 underline-offset-4 title-animated animate-slide-in-left animation-delay-400'>
-                        Other Skills
-                    </h3>
-                    <div>
-                        {engineeringSkills.map((skill, index) => (
-                        <div 
-                            key={index}
-                            className={`inline-flex items-start bg-white text-slate-800 px-4 py-2 m-2 rounded-2xl shadow hover:shadow-md transition text-base font-medium gap-2 card-animated animate-fade-in-up engineering-card-delay-${Math.min(index + 1, 8)}`}
-                        >
-                            {skill.icon}
-                            <div className='flex flex-col'>
-                                <span className='text-sm font-semibold'>{skill.name}</span>
-                                <span className='text-xs text-slate-500'>{skill.level}</span>
-                            </div>
-                        </div>
-                        ))}
-                    </div>
-                </div>
+
+                {/* Education Section */}
                 <div>
-                    <h3 className='text-2xl font-semibold text-indigo-600 mb-6 underline decoration-2 underline-offset-4 title-animated animate-slide-in-left animation-delay-800'
-                        >
+                    <div className="text-center mb-8 sm:mb-10 md:mb-12">
+                        <h3 className='text-3xl sm:text-3xl md:text-4xl font-bold text-indigo-600 mb-3 sm:mb-4 md:mb-6'>
                             Education
-                    </h3>
-                    <div className="flex flex-col md:flex-row md:items-center justify-start gap-6">
+                        </h3>
+                        <p className='text-sm sm:text-base md:text-lg text-gray-600 max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed px-4'>
+                            Academic foundation that shaped my engineering expertise and technical knowledge
+                        </p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto">
                         {education.map((edu, index) => (
-                            <React.Fragment key={index}>
-                                <div 
-                                    className={`flex items-center text-slate-800 px-6 py-4 transition text-base font-medium gap-4 card-animated animate-fade-in-up other-card-delay-${index + 1} flex-1 md:max-w-xs`}
-                                >
-                                    {edu.logo}
-                                    <div className='flex flex-col'>
-                                        <span className='text-sm font-semibold'>{edu.institution}</span>
-                                        <span className='text-xs text-slate-500'>{edu.degree}</span>
-                                        <span className='text-xs text-slate-500'>{edu.period}</span>
+                            <div 
+                                key={index}
+                                className="group bg-white rounded-lg sm:rounded-xl p-4 sm:p-5 md:p-6 shadow-lg hover:shadow-xl transform transition-all duration-300 border border-gray-100 hover:scale-105 hover:-translate-y-1 sm:hover:-translate-y-2"
+                            >
+                                <div className="flex items-start gap-3 sm:gap-4">
+                                    <div className="flex-shrink-0 transform group-hover:scale-110 transition-transform duration-300">
+                                        {edu.logo}
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                        <h4 className="text-sm sm:text-base md:text-lg font-bold text-gray-800 mb-1 sm:mb-2 group-hover:text-indigo-600 transition-colors duration-300 leading-tight">
+                                            {edu.institution}
+                                        </h4>
+                                        <p className="text-gray-600 mb-2 sm:mb-3 leading-relaxed text-xs sm:text-sm">
+                                            {edu.degree}
+                                        </p>
+                                        <div className="inline-flex items-center px-2 sm:px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-bold shadow-lg">
+                                            <FaGraduationCap className="w-3 h-3 mr-1 sm:mr-2" />
+                                            {edu.period}
+                                        </div>
                                     </div>
                                 </div>
-                                {index < education.length - 1 && (
-                                    <div className="hidden md:block w-px h-20 bg-slate-300"></div>
-                                )}
-                            </React.Fragment>
+                            </div>
                         ))}
                     </div>
                 </div>
             </div>
         </section>
-    </>
-  )
-}
+    );
+};
 
 export default Skills
