@@ -15,8 +15,8 @@ const Hero = () => {
         >
         <div className='w-full mx-auto px-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:px-64'>
             <div className='max-w-xl text-center lg:text-left space-y-8'>
-                <h1 className='text-xl sm:text-4xl lg:text-6xl font-bold text-indigo-600 leading-tight'>Welcome to My Portfolio</h1>
-                <p className='text-slate-800 text-sm lg:text-lg'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quos necessitatibus porro quidem illo excepturi.</p>
+                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-indigo-600 leading-tight'>Welcome to My Portfolio</h1>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quos necessitatibus porro quidem illo excepturi.</p>
                 <div className='flex flex-col sm:flex-row gap-3 sm:gap-8 items-center'>
                     <a 
                         href="#"
