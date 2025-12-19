@@ -43,14 +43,14 @@ const Projects = () => {
   const Cards = [
     {
       title: "Pilot",
-      subTitle: "End-to-end AdTech solution",
+      subTitle: "End-to-end AdTech solution.",
       content: "full campaign management system that streamlines the advertising sales cycle from proposal to performance. Today, the industry relies on Pilot to handle their ad sales, allowing users to focus on what they do best while making their work lives easier and more efficient.",
       image: PilotPic
     },
     {
       title: "AQtech",
-      subTitle: "Subtitle 3",
-      content: "This is the content for project 3.",
+      subTitle: "Financial cockpit for construction industry.",
+      content: "AQTech is a startup offering a financial cockpit (SaaS) focused on the construction industry, solving the chaos of spreadsheets (Excel) in managing feasibility studies and cash flow.",
       image: AQtech
     },
     {
@@ -61,26 +61,30 @@ const Projects = () => {
     },
     {
       title: "AGHUx",
-      subTitle: "Management App for University Hospitals",
+      subTitle: "Management App for University Hospitals.",
       content: "The goal of the application is to standardize the care and administrative practices of Federal University Hospitals and to allow the creation of standardized indicators, which will facilitate the adoption of common improvement projects for these hospitals.",
       image: AghuPic
     },
     {
       title: "NovaWealth",
-      subTitle: "Blog with insights on finance and software.",
-      content: "The goal of the application is to standardize the care and administrative practices of Federal University Hospitals and to allow the creation of standardized indicators, which will facilitate the adoption of common improvement projects for these hospitals.",
+      subTitle: "Site with insights on finance and software.",
+      content: (
+        <>
+          NovaWealth is a Site created with a simple belief: Financial literacy and technological understanding are the cornerstones of building sustainable wealth in the modern economy. Site: <a href="https://novawealth.website" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-800 underline">https://novawealth.website/</a>
+        </>
+      ),
       image: NovaWealth
     },
     {
       title: "CLARA Beep Solutions",
-      subTitle: "Technology in laparoscopic surgery",
+      subTitle: "Technology in laparoscopic surgery.",
       content: "CLARA is a tool to assist in performing laparoscopy procedures. The system provides greater precision and camera stability for doctors during the surgical procedure through an optical positioning control system that is easily adjustable via joystick or foot pedal.",
       image: ClaraBeep
     },
     {
       title: "Kuaray",
-      subTitle: "Subtitle 7",
-      content: "This is the content for project 7.",
+      subTitle: "A research to study the stratosphere.",
+      content: "A research and development project from the University of Brasília (UnB), in partnership with the Nasa's Space Balloon Project, focused on low-cost platforms (such as the LAICAnSat stratospheric balloons) to study the stratosphere and phenomena like solar eclipses, capturing unprecedented 360-degree images and data for scientific dissemination and virtual reality.",
       image: KuarayPic
     },
     {
@@ -113,9 +117,9 @@ const Projects = () => {
       `}</style>
       <section id='projects' className='scroll-my-20 pt-24 pb-20 bg-slate-50 px-4 md:px-8 lg:px-64'>
         <div className='w-full mx-auto'>
-            <div className='text-center mb-16'>
-                <h2 className='text-4xl font-bold text-indigo-600 mb-4'>Projects</h2>
-                <p className='text-slate-800'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <div className='text-center mb-8 md:mb-12 lg:mb-16'>
+                <h2 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-indigo-600 mb-3 sm:mb-4 lg:mb-6'>Projects</h2>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4'>Explore my portfolio of innovative projects spanning healthcare, finance, aerospace, and technology solutions.</p>
             </div>
             {/* Carrossel Container */}
             <div className='relative mb-8 py-4'>
