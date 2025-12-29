@@ -37,7 +37,7 @@ const Header = () => {
             <div className="inline-flex bg-indigo-50 rounded-lg border border-indigo-200 overflow-hidden shadow-sm mr-2">
               <button
                 onClick={() => changeLanguage('en')}
-                className="px-4 py-2 text-sm font-semibold focus:outline-none transition-colors border-r border-indigo-200 text-indigo-600 hover:bg-indigo-100 focus:bg-indigo-200 flex items-center gap-1"
+                className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-colors border-r border-indigo-200 flex items-center gap-1 text-indigo-600 ${i18n.language === 'en' ? 'bg-indigo-100' : 'hover:bg-indigo-100 focus:bg-indigo-200'}`}
                 style={{ borderTopLeftRadius: '0.5rem', borderBottomLeftRadius: '0.5rem' }}
                 aria-label="Switch to English"
               >
@@ -46,7 +46,7 @@ const Header = () => {
               </button>
               <button
                 onClick={() => changeLanguage('pt')}
-                className="px-4 py-2 text-sm font-semibold focus:outline-none transition-colors text-indigo-600 hover:bg-indigo-100 focus:bg-indigo-200 flex items-center gap-1"
+                className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-colors flex items-center gap-1 text-indigo-600 ${i18n.language === 'pt' ? 'bg-indigo-100' : 'hover:bg-indigo-100 focus:bg-indigo-200'}`}
                 style={{ borderTopRightRadius: '0.5rem', borderBottomRightRadius: '0.5rem' }}
                 aria-label="Mudar para Português"
               >
