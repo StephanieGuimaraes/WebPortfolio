@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 import { RiJavascriptFill, RiTailwindCssFill } from 'react-icons/ri';
 import { BiLogoTypescript } from 'react-icons/bi';
 import { FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaFigma, FaGitAlt, FaGithub, FaUnity, FaGraduationCap, FaAngular } from 'react-icons/fa';
@@ -305,12 +306,13 @@ const education = [
 
 const Skills = () => {
     const [activeTab, setActiveTab] = useState('software');
+    const { t } = useTranslation();
 
     const tabs = [
-        { id: 'software', label: 'Software', icon: '💻' },
-        { id: 'engineering', label: 'Engineering', icon: '⚙️' },
-        { id: 'other', label: 'Management', icon: '📋' },
-        { id: 'languages', label: 'Languages', icon: '🌍' }
+        { id: 'software', label: t('skills.tabs.software'), icon: '💻' },
+        { id: 'engineering', label: t('skills.tabs.engineering'), icon: '⚙️' },
+        { id: 'other', label: t('skills.tabs.other'), icon: '📋' },
+        { id: 'languages', label: t('skills.tabs.languages'), icon: '🌍' }
     ];
 
     const getSkillsData = () => {
@@ -373,10 +375,10 @@ const Skills = () => {
                 {/* Header */}
                 <div className='text-center mb-8 md:mb-12 lg:mb-16'>
                     <h2 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-indigo-600 mb-3 sm:mb-4 lg:mb-6'>
-                        Skills & Education
+                        {t('skills.title')}
                     </h2>
                     <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4'>
-                        Passionate about technology and engineering, continuously evolving my skills to create innovative solutions and deliver exceptional results
+                        {t('skills.description')}
                     </p>
                 </div>
 

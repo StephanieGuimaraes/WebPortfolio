@@ -1,0 +1,8 @@
+{
+  "hero": {
+    "welcome": "Welcome to My Portfolio",
+    "description": "I am a passionate Software Engineer, working mainly as a Full Stack, who loves building efficient, scalable digital solutions and leading teams to success.",
+    "projects": "Projects",
+    "resume": "Resume"
+  }
+}

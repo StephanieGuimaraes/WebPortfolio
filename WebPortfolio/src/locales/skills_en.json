@@ -1,0 +1,12 @@
+{
+  "skills": {
+    "title": "Skills & Education",
+    "description": "Passionate about technology and engineering, continuously evolving my skills to create innovative solutions and deliver exceptional results.",
+    "tabs": {
+      "software": "Software",
+      "engineering": "Engineering",
+      "other": "Management",
+      "languages": "Languages"
+    }
+  }
+}
