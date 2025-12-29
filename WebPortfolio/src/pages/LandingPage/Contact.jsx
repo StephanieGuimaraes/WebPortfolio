@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane, FaUser, FaComment } from 'react-icons/fa'
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,20 +22,27 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simular envio do formulário
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
-      // Resetar formulário
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+
+    // EmailJS config: substitua pelos seus dados
+    const serviceID = 'service_ftzxbyo';
+    const templateID = 'template_ma3vy28';
+    const userID = 'tYIHci-2977XcxHsg';
+
+    emailjs.send(serviceID, templateID, formData, userID)
+      .then((response) => {
+        setIsSubmitting(false);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        alert('Mensagem enviada com sucesso!');
+      })
+      .catch((error) => {
+        setIsSubmitting(false);
+        alert('Erro ao enviar mensagem. Tente novamente.');
       });
-      alert('Mensagem enviada com sucesso!');
-    }, 2000);
   };
 
   return (
@@ -47,7 +55,7 @@ const Contact = () => {
             
             <h2 className='text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4'>Get In Touch</h2>
             <p className='text-base md:text-lg text-white/90 max-w-2xl mx-auto'>
-              Let's discuss your next project and how we can work together.
+              Let's discuss your project and how we can work together.
             </p>
           </div>
 
@@ -71,7 +79,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className='text-white font-medium text-sm'>Email</p>
-                    <p className='text-white/80 text-xs'>seu.email@exemplo.com</p>
+                    <p className='text-white/80 text-xs'>stephanieguimaraes7@gmail.com</p>
                   </div>
                 </div>
 
@@ -81,7 +89,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className='text-white font-medium text-sm'>Phone</p>
-                    <p className='text-white/80 text-xs'>+55 (11) 99999-9999</p>
+                    <p className='text-white/80 text-xs'>+55 (62) 982149782</p>
                   </div>
                 </div>
 
@@ -91,7 +99,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className='text-white font-medium text-sm'>Location</p>
-                    <p className='text-white/80 text-xs'>Brasília, DF - Brasil</p>
+                    <p className='text-white/80 text-xs'>Goiânia, GO - Brazil</p>
                   </div>
                 </div>
               </div>
@@ -100,10 +108,10 @@ const Contact = () => {
               <div className='pt-4'>
                 <h4 className='text-white font-medium mb-3 text-sm'>Follow Me</h4>
                 <div className='flex space-x-3'>
-                  <a href="#" className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300'>
+                  <a href="https://www.linkedin.com/in/stephanie-guimaraes-319306107/" target="_blank" rel="noopener noreferrer" className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300'>
                     <FaLinkedin className='w-4 h-4 text-white' />
                   </a>
-                  <a href="#" className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300'>
+                  <a href="https://github.com/StephanieGuimaraes" target="_blank" rel="noopener noreferrer" className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300'>
                     <FaGithub className='w-4 h-4 text-white' />
                   </a>
                 </div>
@@ -218,7 +226,7 @@ const Contact = () => {
             
             {/* Brand */}
             <div className='space-y-4'>
-              <h3 className='text-xl md:text-2xl font-bold'>Your Portfolio</h3>
+              <h3 className='text-xl md:text-2xl font-bold'> Stephanie Guimarães Portfolio</h3>
               <p className='text-gray-400 leading-relaxed'>
                 Passionate developer creating innovative solutions and bringing ideas to life through code.
               </p>
@@ -249,15 +257,15 @@ const Contact = () => {
               <ul className='space-y-3 text-gray-400'>
                 <li className='flex items-center space-x-3'>
                   <FaEnvelope className='w-4 h-4 text-indigo-400' />
-                  <span>seu.email@exemplo.com</span>
+                  <span>stephanieguimaraes7@gmail.com</span>
                 </li>
                 <li className='flex items-center space-x-3'>
                   <FaPhone className='w-4 h-4 text-indigo-400' />
-                  <span>+55 (11) 99999-9999</span>
+                  <span>+55 (62) 982149782</span>
                 </li>
                 <li className='flex items-center space-x-3'>
                   <FaMapMarkerAlt className='w-4 h-4 text-indigo-400' />
-                  <span>Brasília, DF - Brasil</span>
+                  <span>Goiânia, GO - Brazil</span>
                 </li>
               </ul>
             </div>
@@ -266,7 +274,7 @@ const Contact = () => {
           {/* Bottom Bar */}
           <div className='border-t border-gray-800 mt-6 md:mt-8 pt-6 text-center'>
             <p className='text-gray-400'>
-              © 2025 Your Portfolio. Built with React & Tailwind CSS. All rights reserved.
+              © 2025 Stephanie Guimarães Portfolio. Built with React & Tailwind CSS. All rights reserved.
             </p>
           </div>
         </div>

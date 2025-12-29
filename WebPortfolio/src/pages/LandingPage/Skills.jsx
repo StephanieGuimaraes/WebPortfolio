@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { RiJavascriptFill, RiTailwindCssFill } from 'react-icons/ri';
 import { BiLogoTypescript } from 'react-icons/bi';
-import { FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaFigma, FaGitAlt, FaGithub, FaUnity, FaGraduationCap } from 'react-icons/fa';
+import { FaReact, FaCss3Alt, FaHtml5, FaNodeJs, FaFigma, FaGitAlt, FaGithub, FaUnity, FaGraduationCap, FaAngular } from 'react-icons/fa';
 import { CgCodeSlash } from 'react-icons/cg';
 import { SiCypress, SiAltiumdesigner } from 'react-icons/si';
 import { LuRotate3D } from 'react-icons/lu';
@@ -30,6 +30,13 @@ const softwareSkills = [
         level: 'Advanced',
         percentage: 95,
         color: 'text-cyan-500'
+    },
+    {
+        icon: <FaAngular className='w-4 h-4' />,
+        name: 'Angular',
+        level: 'Intermediate',
+        percentage: 60,
+        color: 'text-red-500'
     },
     {
         icon: <RiTailwindCssFill className='w-4 h-4' />,
@@ -216,6 +223,13 @@ const otherSkills = [
         icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Scrum',
         level: 'Advanced',
+        percentage: 95,
+        color: 'text-blue-600'
+    },
+    {
+        icon: <CgCodeSlash className='w-4 h-4' />,
+        name: 'Kanban',
+        level: 'Advanced',
         percentage: 90,
         color: 'text-blue-600'
     },
@@ -223,14 +237,28 @@ const otherSkills = [
         icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Agile Methodologies',
         level: 'Advanced',
-        percentage: 88,
-        color: 'text-green-600'
+        percentage: 95,
+        color: 'text-blue-600'
+    },
+    {
+        icon: <CgCodeSlash className='w-4 h-4' />,
+        name: 'JIRA',
+        level: 'Advanced',
+        percentage: 90,
+        color: 'text-blue-600'
+    },
+    {
+        icon: <CgCodeSlash className='w-4 h-4' />,
+        name: 'Bitrix',
+        level: 'Intermediate',
+        percentage: 80,
+        color: 'text-blue-600'
     },
     {
         icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Atlassian Tools',
-        level: 'Intermediate',
-        percentage: 75,
+        level: 'Advanced',
+        percentage: 85,
         color: 'text-blue-500'
     }
 ];

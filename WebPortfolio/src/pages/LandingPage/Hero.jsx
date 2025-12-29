@@ -16,26 +16,31 @@ const Hero = () => {
         <div className='w-full mx-auto px-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:px-64'>
             <div className='max-w-xl text-center lg:text-left space-y-8'>
                 <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-indigo-600 leading-tight'>Welcome to My Portfolio</h1>
-                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur quos necessitatibus porro quidem illo excepturi.</p>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed'>I am a passionate Software Engineer, working mainly as a Full Stack developer, who loves building efficient, scalable digital solutions and leading teams to success.</p>
                 <div className='flex flex-col sm:flex-row gap-3 sm:gap-8 items-center'>
                     <a 
-                        href="#"
+                        href="#projects"
                         className='inline-flex items-center bg-indigo-600 text-white px-3 py-1 sm:px-6 sm:py-3 rounded-full hover:bg-indigo-800 transition text-base font-medium gap-3'
                     >
                         Projects
                         <CgCodeSlash className='w-5 h-5 text-white'/>
                     </a>
                     <a 
-                        href="#"
+                        href="/Resume.pdf"
+                        download
                         className='inline-flex items-center border-2 border-indigo-600 text-indigo-600 px-3 py-1 sm:px-6 sm:py-3 rounded-full hover:bg-indigo-100 transition text-base font-medium gap-3'
                     >
                         Resume
                         <FaFileDownload className='w-5 h-5 text-indigo-600'/>
                     </a>
                 </div>
-                <div className='inline-flex mt-5 space-x-4 cursor-pointer '>
-                    <BsLinkedin size={25} className='text-indigo-600 hover:text-indigo-800'/>
-                    <BsGithub size={25} className='text-indigo-600 hover:text-indigo-800'/>
+                <div className='inline-flex mt-5 space-x-1 cursor-pointer '>
+                    <a href="https://www.linkedin.com/in/stephanie-guimaraes-319306107/" target="_blank" rel="noopener noreferrer" className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300'>
+                        <BsLinkedin size={25} className='text-indigo-600 hover:text-indigo-800'/>
+                    </a>
+                    <a href="https://github.com/StephanieGuimaraes" target="_blank" rel="noopener noreferrer" className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300'>
+                        <BsGithub size={25} className='text-indigo-600 hover:text-indigo-800'/>
+                    </a>
                 </div>
             </div>
             <div className="flex items-center justify-center">
