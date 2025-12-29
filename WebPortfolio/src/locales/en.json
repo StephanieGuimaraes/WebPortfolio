@@ -4,5 +4,37 @@
     "description": "I am a passionate Software Engineer, working mainly as a Full Stack, who loves building efficient, scalable digital solutions and leading teams to success.",
     "projects": "Projects",
     "resume": "Resume"
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Explore my portfolio of innovative projects spanning healthcare, finance, aerospace, and technology solutions."
+  }
+  ,
+  "contact": {
+    "title": "Get In Touch",
+    "description": "Let's discuss your project and how we can work together.",
+    "connectTitle": "Let's Connect",
+    "connectDescription": "Ready to discuss new opportunities and collaborate on projects.",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "follow": "Follow Me"
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Project discussion, collaboration...",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
   }
 }

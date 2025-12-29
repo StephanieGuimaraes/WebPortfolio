@@ -418,10 +418,10 @@ const Skills = () => {
                 <div>
                     <div className="text-center mb-8 sm:mb-10 md:mb-12">
                         <h3 className='text-3xl sm:text-3xl md:text-4xl font-bold text-indigo-600 mb-3 sm:mb-4 md:mb-6'>
-                            Education
+                            {t('skills.education.title')}
                         </h3>
                         <p className='text-sm sm:text-base md:text-lg text-gray-600 max-w-sm sm:max-w-lg md:max-w-xl lg:max-w-2xl mx-auto leading-relaxed px-4'>
-                            Academic foundation that shaped my engineering expertise and technical knowledge
+                            {t('skills.education.description')}
                         </p>
                     </div>
                     

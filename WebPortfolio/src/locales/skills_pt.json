@@ -7,6 +7,10 @@
       "engineering": "Engenharia",
       "other": "Gestão",
       "languages": "Idiomas"
+    },
+    "education": {
+      "title": "Educação",
+      "description": "Base acadêmica que moldou minha expertise em engenharia e conhecimento técnico."
     }
   }
 }

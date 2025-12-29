@@ -7,6 +7,10 @@
       "engineering": "Engineering",
       "other": "Management",
       "languages": "Languages"
+    },
+    "education": {
+      "title": "Education",
+      "description": "Academic foundation that shaped my engineering expertise and technical knowledge."
     }
   }
 }
