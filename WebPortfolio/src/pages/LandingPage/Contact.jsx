@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaPaperPlane, FaUser, FaComment } from 'react-icons/fa'
 import emailjs from 'emailjs-com';
 
@@ -45,6 +46,7 @@ const Contact = () => {
       });
   };
 
+  const { t } = useTranslation();
   return (
     <>
       {/* Contact Section */}
@@ -52,10 +54,9 @@ const Contact = () => {
         <div className='w-full mx-auto'>
           {/* Header */}
           <div className='text-center mb-8 md:mb-12'>
-            
-            <h2 className='text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4'>Get In Touch</h2>
+            <h2 className='text-3xl md:text-4xl font-bold text-white mb-3 md:mb-4'>{t('contact.title')}</h2>
             <p className='text-base md:text-lg text-white/90 max-w-2xl mx-auto'>
-              Let's discuss your project and how we can work together.
+              {t('contact.description')}
             </p>
           </div>
 
@@ -65,9 +66,9 @@ const Contact = () => {
             {/* Contact Information */}
             <div className='space-y-6'>
               <div>
-                <h3 className='text-xl md:text-2xl font-bold text-white mb-4'>Let's Connect</h3>
+                <h3 className='text-xl md:text-2xl font-bold text-white mb-4'>{t('contact.connectTitle')}</h3>
                 <p className='text-white/80 mb-6 text-sm md:text-base'>
-                  Ready to discuss new opportunities and collaborate on projects.
+                  {t('contact.connectDescription')}
                 </p>
               </div>
 
@@ -78,7 +79,7 @@ const Contact = () => {
                     <FaEnvelope className='w-4 h-4 text-white' />
                   </div>
                   <div>
-                    <p className='text-white font-medium text-sm'>Email</p>
+                    <p className='text-white font-medium text-sm'>{t('contact.info.email')}</p>
                     <p className='text-white/80 text-xs'>stephanieguimaraes7@gmail.com</p>
                   </div>
                 </div>
@@ -88,7 +89,7 @@ const Contact = () => {
                     <FaPhone className='w-4 h-4 text-white' />
                   </div>
                   <div>
-                    <p className='text-white font-medium text-sm'>Phone</p>
+                    <p className='text-white font-medium text-sm'>{t('contact.info.phone')}</p>
                     <p className='text-white/80 text-xs'>+55 (62) 982149782</p>
                   </div>
                 </div>
@@ -98,7 +99,7 @@ const Contact = () => {
                     <FaMapMarkerAlt className='w-4 h-4 text-white' />
                   </div>
                   <div>
-                    <p className='text-white font-medium text-sm'>Location</p>
+                    <p className='text-white font-medium text-sm'>{t('contact.info.location')}</p>
                     <p className='text-white/80 text-xs'>Goiânia, GO - Brazil</p>
                   </div>
                 </div>
@@ -106,7 +107,7 @@ const Contact = () => {
 
               {/* Social Links */}
               <div className='pt-4'>
-                <h4 className='text-white font-medium mb-3 text-sm'>Follow Me</h4>
+                <h4 className='text-white font-medium mb-3 text-sm'>{t('contact.info.follow')}</h4>
                 <div className='flex space-x-3'>
                   <a href="https://www.linkedin.com/in/stephanie-guimaraes-319306107/" target="_blank" rel="noopener noreferrer" className='w-10 h-10 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300'>
                     <FaLinkedin className='w-4 h-4 text-white' />
@@ -120,14 +121,14 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className='bg-white/10 backdrop-blur-sm rounded-xl p-5 md:p-6 border border-white/20'>
-              <h3 className='text-xl md:text-2xl font-bold text-white mb-4 md:mb-6'>Send a Message</h3>
+              <h3 className='text-xl md:text-2xl font-bold text-white mb-4 md:mb-6'>{t('contact.form.title')}</h3>
               
               <form onSubmit={handleSubmit} className='space-y-4'>
                 {/* Name Field */}
                 <div>
                   <label className='block text-white font-medium mb-2' htmlFor='name'>
                     <FaUser className='inline w-4 h-4 mr-2' />
-                    Name
+                    {t('contact.form.name')}
                   </label>
                   <input
                     type='text'
@@ -137,7 +138,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     className='w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-300'
-                    placeholder='Your full name'
+                    placeholder={t('contact.form.namePlaceholder')}
                   />
                 </div>
 
@@ -145,7 +146,7 @@ const Contact = () => {
                 <div>
                   <label className='block text-white font-medium mb-2' htmlFor='email'>
                     <FaEnvelope className='inline w-4 h-4 mr-2' />
-                    Email
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type='email'
@@ -155,14 +156,14 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     className='w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-300'
-                    placeholder='your.email@example.com'
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
 
                 {/* Subject Field */}
                 <div>
                   <label className='block text-white font-medium mb-2' htmlFor='subject'>
-                    Subject
+                    {t('contact.form.subject')}
                   </label>
                   <input
                     type='text'
@@ -172,7 +173,7 @@ const Contact = () => {
                     onChange={handleInputChange}
                     required
                     className='w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-300'
-                    placeholder='Project discussion, collaboration...'
+                    placeholder={t('contact.form.subjectPlaceholder')}
                   />
                 </div>
 
@@ -180,7 +181,7 @@ const Contact = () => {
                 <div>
                   <label className='block text-white font-medium mb-2' htmlFor='message'>
                     <FaComment className='inline w-4 h-4 mr-2' />
-                    Message
+                    {t('contact.form.message')}
                   </label>
                   <textarea
                     id='message'
@@ -190,7 +191,7 @@ const Contact = () => {
                     required
                     rows='4'
                     className='w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent transition-all duration-300 resize-none'
-                    placeholder='Tell me about your project...'
+                    placeholder={t('contact.form.messagePlaceholder')}
                   ></textarea>
                 </div>
 
@@ -205,11 +206,11 @@ const Contact = () => {
                   }`}
                 >
                   {isSubmitting ? (
-                    <span>Sending...</span>
+                    <span>{t('contact.form.sending')}</span>
                   ) : (
                     <>
                       <FaPaperPlane className='w-4 h-4' />
-                      <span>Send Message</span>
+                      <span>{t('contact.form.send')}</span>
                     </>
                   )}
                 </button>

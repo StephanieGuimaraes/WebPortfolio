@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import { AiOutlineClose } from "react-icons/ai";
 import {CgMenu, CgNametag, CgPhone} from 'react-icons/cg';
+import { FlagEN, FlagBR } from '../../components/Flags';
 import Logo1 from '../../assets/logos/Logo1_rbg.png';
 
 const navList = [
@@ -11,6 +13,10 @@ const navList = [
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { i18n } = useTranslation();
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <header className="scroll-mt-20 bg-white shadow-md sticky top-0 z-50">
       <div className="w-full mx-auto flex items-center justify-between py-4 px-6 lg:px-64">
@@ -27,11 +33,32 @@ const Header = () => {
         </div>
         <div className="flex items-center space-x-6">
           <nav className="hidden md:flex items-center space-x-6 text-indigo-600 font-medium">
+            {/* Language Button Group */}
+            <div className="inline-flex bg-indigo-50 rounded-lg border border-indigo-200 overflow-hidden shadow-sm mr-2">
+              <button
+                onClick={() => changeLanguage('en')}
+                className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-colors border-r border-indigo-200 flex items-center gap-1 text-indigo-600 ${i18n.language === 'en' ? 'bg-indigo-100' : 'hover:bg-indigo-100 focus:bg-indigo-200'}`}
+                style={{ borderTopLeftRadius: '0.5rem', borderBottomLeftRadius: '0.5rem' }}
+                aria-label="Switch to English"
+              >
+                <FlagEN />
+                EN
+              </button>
+              <button
+                onClick={() => changeLanguage('pt')}
+                className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-colors flex items-center gap-1 text-indigo-600 ${i18n.language === 'pt' ? 'bg-indigo-100' : 'hover:bg-indigo-100 focus:bg-indigo-200'}`}
+                style={{ borderTopRightRadius: '0.5rem', borderBottomRightRadius: '0.5rem' }}
+                aria-label="Mudar para Português"
+              >
+                <FlagBR />
+                PT
+              </button>
+            </div>
             {navList.map((link) => (
               <a href={link.href} key={link.href} className="text-lg hover:text-indigo-800 transition">
                 {link.label}
               </a>
-          ))}
+            ))}
           </nav>
           <div className="hidden md:flex items-center space-x-2 bg-indigo-600 px-4 py-2 rounded-full hover:bg-indigo-800 transition text-md cursor-pointer">
             <CgPhone className="w-4 h-4 text-white"/>

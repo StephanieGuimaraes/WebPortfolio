@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import { CgCodeSlash } from 'react-icons/cg';
 import {FaFileDownload} from 'react-icons/fa';
 import ProfilePic from '../../assets/MyProfile2.png';
@@ -7,7 +8,8 @@ import {BsLinkedin, BsGithub } from 'react-icons/bs';
 
 
 const Hero = () => {
-  return (
+    const { t } = useTranslation();
+    return (
     <section 
         id='home' 
         className='scroll-m-20 bg-slate-50 h-[90vh] flex items-center justify-center'
@@ -15,14 +17,14 @@ const Hero = () => {
         >
         <div className='w-full mx-auto px-20 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:px-64'>
             <div className='max-w-xl text-center lg:text-left space-y-8'>
-                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-indigo-600 leading-tight'>Welcome to My Portfolio</h1>
-                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed'>I am a passionate Software Engineer, working mainly as a Full Stack developer, who loves building efficient, scalable digital solutions and leading teams to success.</p>
+                <h1 className='text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-indigo-600 leading-tight'>{t('hero.welcome')}</h1>
+                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed'>{t('hero.description')}</p>
                 <div className='flex flex-col sm:flex-row gap-3 sm:gap-8 items-center'>
                     <a 
                         href="#projects"
                         className='inline-flex items-center bg-indigo-600 text-white px-3 py-1 sm:px-6 sm:py-3 rounded-full hover:bg-indigo-800 transition text-base font-medium gap-3'
                     >
-                        Projects
+                        {t('hero.projects')}
                         <CgCodeSlash className='w-5 h-5 text-white'/>
                     </a>
                     <a 
@@ -30,7 +32,7 @@ const Hero = () => {
                         download
                         className='inline-flex items-center border-2 border-indigo-600 text-indigo-600 px-3 py-1 sm:px-6 sm:py-3 rounded-full hover:bg-indigo-100 transition text-base font-medium gap-3'
                     >
-                        Resume
+                        {t('hero.resume')}
                         <FaFileDownload className='w-5 h-5 text-indigo-600'/>
                     </a>
                 </div>

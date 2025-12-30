@@ -1,0 +1,16 @@
+{
+  "skills": {
+    "title": "Competências & Educação",
+    "description": "Apaixonada por tecnologia e engenharia, evoluindo continuamente minhas habilidades para criar soluções inovadoras e resultados excepcionais.",
+    "tabs": {
+      "software": "Software",
+      "engineering": "Engenharia",
+      "other": "Gestão",
+      "languages": "Idiomas"
+    },
+    "education": {
+      "title": "Educação",
+      "description": "Base acadêmica que moldou minha expertise em engenharia e conhecimento técnico."
+    }
+  }
+}

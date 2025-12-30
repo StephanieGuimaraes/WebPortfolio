@@ -1,0 +1,40 @@
+{
+  "hero": {
+    "welcome": "Bem-vindo ao Meu Portfólio",
+    "description": "Sou uma Engenheira de Software apaixonada, atuando principalmente como Full Stack, que adora criar soluções digitais eficientes, escaláveis e liderar equipes rumo ao sucesso.",
+    "projects": "Projetos",
+    "resume": "Currículo"
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Explore meu portfólio de projetos inovadores nas áreas de saúde, finanças, aeroespacial e soluções tecnológicas."
+  }
+  ,
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Vamos conversar sobre seu projeto e como podemos trabalhar juntos.",
+    "connectTitle": "Vamos Conectar",
+    "connectDescription": "Pronta para discutir novas oportunidades e colaborar em projetos.",
+    "info": {
+      "email": "E-mail",
+      "phone": "Telefone",
+      "location": "Localização",
+      "follow": "Siga-me"
+    },
+    "form": {
+      "title": "Envie uma Mensagem",
+      "name": "Nome",
+      "namePlaceholder": "Seu nome completo",
+      "email": "E-mail",
+      "emailPlaceholder": "seu.email@exemplo.com",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Discussão de projeto, colaboração...",
+      "message": "Mensagem",
+      "messagePlaceholder": "Conte-me sobre seu projeto...",
+      "send": "Enviar Mensagem",
+      "sending": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Falha ao enviar mensagem. Por favor, tente novamente."
+    }
+  }
+}

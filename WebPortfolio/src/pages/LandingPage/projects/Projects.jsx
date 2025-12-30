@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next';
 import ProfilePic from '../../../assets/MyProfile2.png';
 import AghuPic from '../../../assets/ProjectsCardsPic/AghuPic.png';
 import NovaWealth from '../../../assets/ProjectsCardsPic/NovaWealth.png';
@@ -10,6 +11,7 @@ import LaicanSat from '../../../assets/ProjectsCardsPic/LaicanSat.jpg';
 import PilotPic from '../../../assets/ProjectsCardsPic/Pilot.png';
 
 const Projects = () => {
+  const { t } = useTranslation();
   const [activeCard, setActiveCard] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   
@@ -118,8 +120,8 @@ const Projects = () => {
       <section id='projects' className='scroll-my-20 pt-24 pb-20 bg-slate-50 px-4 md:px-8 lg:px-64'>
         <div className='w-full mx-auto'>
             <div className='text-center mb-8 md:mb-12 lg:mb-16'>
-                <h2 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-indigo-600 mb-3 sm:mb-4 lg:mb-6'>Projects</h2>
-                <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4'>Explore my portfolio of innovative projects spanning healthcare, finance, aerospace, and technology solutions.</p>
+              <h2 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-indigo-600 mb-3 sm:mb-4 lg:mb-6'>{t('projects.title')}</h2>
+              <p className='text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto leading-relaxed px-4'>{t('projects.description')}</p>
             </div>
             {/* Carrossel Container */}
             <div className='relative mb-8 py-4'>
