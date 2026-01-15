@@ -22,7 +22,7 @@ const softwareSkills = [
         icon: <BiLogoTypescript className='w-4 h-4' />, 
         name: 'TypeScript',
         level: 'Advanced',
-        percentage: 85,
+        percentage: 90,
         color: 'text-blue-600'
     },
     {
@@ -269,7 +269,7 @@ const languages = [
         icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'English',
         level: 'Advanced',
-        percentage: 85,
+        percentage: 90,
         color: 'text-blue-500'
     },
     {
@@ -283,7 +283,7 @@ const languages = [
         icon: <CgCodeSlash className='w-4 h-4' />,
         name: 'Spanish',
         level: 'Beginner',
-        percentage: 30,
+        percentage: 35,
         color: 'text-red-500'
     }
 ];

@@ -232,10 +232,10 @@ const Contact = () => {
                 Passionate developer creating innovative solutions and bringing ideas to life through code.
               </p>
               <div className='flex space-x-4'>
-                <a href="#" className='w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center hover:bg-indigo-500 transition-colors duration-300'>
+                <a href="https://www.linkedin.com/in/stephanie-guimaraes-319306107/" target="_blank" className='w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center hover:bg-indigo-500 transition-colors duration-300'>
                   <FaLinkedin className='w-5 h-5' />
                 </a>
-                <a href="#" className='w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center hover:bg-indigo-500 transition-colors duration-300'>
+                <a href="https://github.com/StephanieGuimaraes" target="_blank" className='w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center hover:bg-indigo-500 transition-colors duration-300'>
                   <FaGithub className='w-5 h-5' />
                 </a>
               </div>
