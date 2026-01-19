@@ -74,7 +74,30 @@ const Header = () => {
       {
         isMenuOpen && (
           <div className="md:hidden bg-white border-t border-slate-200 shadow-md px-6 py-4 space-y-3 text-indigo-600 font-medium">
-             {navList.map((link) => (
+            {/* Language Button Group - Mobile */}
+            <div className="flex justify-start mb-3">
+              <div className="inline-flex bg-indigo-50 rounded-lg border border-indigo-200 overflow-hidden shadow-sm">
+                <button
+                  onClick={() => changeLanguage('en')}
+                  className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-colors border-r border-indigo-200 flex items-center gap-1 text-indigo-600 ${i18n.language === 'en' ? 'bg-indigo-100' : 'hover:bg-indigo-100 focus:bg-indigo-200'}`}
+                  style={{ borderTopLeftRadius: '0.5rem', borderBottomLeftRadius: '0.5rem' }}
+                  aria-label="Switch to English"
+                >
+                  <FlagEN />
+                  EN
+                </button>
+                <button
+                  onClick={() => changeLanguage('pt')}
+                  className={`px-4 py-2 text-sm font-semibold focus:outline-none transition-colors flex items-center gap-1 text-indigo-600 ${i18n.language === 'pt' ? 'bg-indigo-100' : 'hover:bg-indigo-100 focus:bg-indigo-200'}`}
+                  style={{ borderTopRightRadius: '0.5rem', borderBottomRightRadius: '0.5rem' }}
+                  aria-label="Mudar para Português"
+                >
+                  <FlagBR />
+                  PT
+                </button>
+              </div>
+            </div>
+            {navList.map((link) => (
               <a
                 href={link.href}
                 key={link.href}
@@ -83,7 +106,7 @@ const Header = () => {
               >
                 {link.label}
               </a>
-             ))}
+            ))}
           </div>
         )
       }
